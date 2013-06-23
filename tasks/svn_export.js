@@ -18,7 +18,7 @@ module.exports = function(grunt) {
     var options = this.options({
       bin:        'svn',
       repository: '',
-      output:     ''
+      output:     'src'
     });
     grunt.verbose.writeflags(options, 'Options');
     var done = this.async();
