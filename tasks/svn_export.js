@@ -21,8 +21,9 @@ module.exports = function(grunt) {
       output:     'src'
     });
     grunt.verbose.writeflags(options, 'Options');
-    var done = this.async();
+    grunt.log.write('Exporting from ' + options.repository + '\n');
 
+    var done = this.async();
     var command = [ options.bin, 'export', options.repository, options.output ].join(' ');
 
     exec(command, function (error, stdout) {
@@ -30,9 +31,7 @@ module.exports = function(grunt) {
       if (error !== null) {
         grunt.log.error('\n#' + command + "\n" + error);
       }
+      done(true);
     });
-
-    done(true);
   });
-
 };
