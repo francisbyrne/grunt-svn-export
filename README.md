@@ -62,9 +62,11 @@ In this example, the default options are used to do something with whatever. So 
 
 ```js
 grunt.initConfig({
-  svnexport: {
-    options: {
-      repository: 'file:///some/svn/repo/'
+  svn_export: {
+    dev: {
+      options: {
+        repository: 'file:///some/repo/path'
+      }
     }
   }
 })
@@ -74,13 +76,15 @@ grunt.initConfig({
 
 ```js
 grunt.initConfig({
-  svnexport: {
-    options: {
-      bin: '/usr/bin/svn',
-      repository: '<%= pkg.svn %>',
-      output: 'output/files'
+  svn_export: {
+    dev: {
+      options: {
+        bin: '/usr/bin/svn',
+        repository: '<%= pkg.svn %>',
+        output: 'output/files'
+      }
     }
-  },
+  }
 })
 ```
 
