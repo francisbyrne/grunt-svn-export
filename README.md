@@ -55,6 +55,12 @@ Default value: `'src'`
 
 A string value that is used to specify the output path of the export.
 
+#### options.execOpts
+Type: `Object`
+Default value: `{}`
+
+An object with exec configuration settings
+
 ### Usage Examples
 
 #### Default Options
@@ -66,6 +72,10 @@ grunt.initConfig({
     dev: {
       options: {
         repository: 'file:///some/repo/path'
+        // Optional setting for exporting large repositories
+        execOpts: {
+          maxBuffer: 1000*1024
+        }        
       }
     }
   }
