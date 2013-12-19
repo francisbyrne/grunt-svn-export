@@ -18,7 +18,8 @@ module.exports = function(grunt) {
     var options = this.options({
       bin:        'svn',
       repository: '',
-      output:     'src'
+      output:     'src',
+      execOpts:	  {}
     });
     grunt.verbose.writeflags(options, 'Options');
     grunt.log.write('Exporting from ' + options.repository + '\n');
@@ -26,7 +27,7 @@ module.exports = function(grunt) {
     var done = this.async();
     var command = [ options.bin, 'export', options.repository, options.output ].join(' ');
 
-    exec(command, function (error, stdout) {
+    exec(command, options.execOpts, function (error, stdout) {
       grunt.log.write(stdout);
       if (error !== null) {
         grunt.log.error('\n#' + command + "\n" + error);
