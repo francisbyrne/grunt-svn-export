@@ -1,7 +1,7 @@
 {
   "name": "grunt-svn-export",
   "description": "Export an svn path to a specified directory via Grunt.",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "homepage": "https://github.com/francisbyrne/grunt-svn-export",
   "author": {
     "name": "francisbyrne",
